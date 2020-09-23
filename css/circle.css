@@ -1,0 +1,74 @@
+.circle{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #112B33;
+    border-radius: 100%;
+    transition:0.2s ;
+    cursor: pointer;
+}
+
+.circle .content{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background-color: #112B33;
+    border-radius: 100%;
+}
+
+.circle:hover{
+    background-image: linear-gradient(to bottom, #f5a252 0%, #dc2d50 25%, #6d529e 50% ,#d3315d 75%, #3a4ed5 100%);
+    animation: border 0.3s ease-in-out infinite;
+}
+
+/*.circle::after {*/
+    /*border-radius: 100%;*/
+    /*content: '';*/
+    /*background-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);*/
+    /*top: -10px;*/
+    /*left: -10px;*/
+    /*bottom: -10px;*/
+    /*right: -10px;*/
+    /*position: absolute;*/
+    /*z-index:-1;*/
+/*}*/
+
+@keyframes border{
+    0% {
+        background-image: linear-gradient(to bottom, #6d529e 0%, #dc2d50 25%, #f5a252 75%, #dc2d50 100%);
+    }
+
+
+    25% {
+        background-image: linear-gradient(to bottom, #dc2d50 0%, #6d529e 25%, #dc2d50 75%, #f5a252 100%);
+    }
+
+    50% {
+        background-image: linear-gradient(to bottom, #f5a252 0%, #dc2d50 25%, #6d529e 75%, #dc2d50 100%);
+    }
+
+    75% {
+        background-image: linear-gradient(to bottom, #dc2d50 0%, #f5a252 25%, #dc2d50 75%, #6d529e 100%);
+    }
+
+    100% {
+        background-image: linear-gradient(to bottom, #6d529e 0%, #dc2d50 25%, #f5a252 75%, #dc2d50 100%);
+    }
+}
+
+.circle img{
+    height: 100%;
+    transition: 0.2s;
+}
+
+.circle:hover img{
+    height: 85%;
+}

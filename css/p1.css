@@ -1,0 +1,83 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.cardBox{
+    position: relative;
+    margin-right: 16px;
+    min-width: 225px;
+    height: 350px;
+    background-image: url("https://www.timeshighereducation.com/sites/default/files/styles/the_breaking_news_image_style/public/istock-546434836.jpg?itok=LHhMxt6b");
+    border-radius: 5px;
+    overflow-y: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ff4148;
+    transition: 0.5s;
+}
+
+.cardBox:hover{
+    box-shadow: inset #0000006b 0px 2px 100px 50px;
+    background-size: inherit;
+}
+
+.cardBox .detalleBlanco{
+    position: absolute;
+    left: 0;
+    top: 180px;
+    content: ' ';
+    clip-path: polygon(100% 49%, 100% 100%, 0 100%, 0 63%);
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.cardBox:hover .detalleBlanco{
+    top:50px;
+}
+
+.cardBox .fondo{
+    position: absolute;
+    left: 0;
+    top: 202px;
+    content: ' ';
+    clip-path: polygon(100% 75%, 100% 100%, 0 100%, 0 42%);
+    width: 100%;
+    height: 100%;
+    background-color: #ff4148;
+    transition: 0.5s;
+}
+
+.cardBox:hover .fondo{
+    top:50px;
+}
+
+.cardBox .text{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.cardBox .text .title{
+    z-index: 1000000;
+    margin-bottom: 10%;
+    font-weight: bolder;font-size: 32px;
+    opacity: 0;
+    transition: 0.1s ease-in;
+}
+
+.cardBox:hover .text .title{
+    opacity: 1;
+}
+
+

@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang=es>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--
+    <link rel="stylesheet" href="css/p0.css">
+    <link rel="stylesheet" href="css/p1.css">
+    <link rel="stylesheet" href="css/p2.css">
+    <link rel="stylesheet" href="css/circle.css">-->
+    <link rel="stylesheet" href="css/cumple.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main>
+
+    <div id="containerCumple">
+
+        <div class="resumen">
+            <h1>Cumpleaños de Bea</h1>
+            <h2>Quedan:</h2>    
+        </div>
+
+        <div class="content">
+            <div class="box">
+                <span class="boxTitle">Días:</span>
+                <span id="dias" class="boxContent">0</span>
+            </div>
+
+            <div class="box">
+                <span class="boxTitle">Horas:</span>
+                <span id="horas" class="boxContent">0</span>
+            </div>
+
+            <div class="box">
+                <span class="boxTitle">Minutos:</span>
+                <span id="minutos" class="boxContent">0</span>
+            </div>
+
+            <div class="box">
+                <span class="boxTitle">Segundos:</span>
+                <span id="segundos" class="boxContent">0</span>
+            </div>
+        </div>
+
+        <div class="selectorImagen">
+            <div class="selector"></div>
+            <div class="selector"></div>
+            <div class="selector"></div>
+            <div class="selector"></div>
+        </div>
+    
+    </div>
+
+</main>
+
+    <!--<div id="container"></div>-->
+
+    <!--
+    <div id="container2">
+        <div class="cardBox2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <img src="https://i.pinimg.com/originals/79/7a/fe/797afe1351677d0ad8787224e6a5be2a.png">
+        </div>
+
+        <div class="cardBox2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Telegram_Messenger.png/768px-Telegram_Messenger.png">
+        </div>
+
+        <div class="cardBox2">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <img src="https://purepng.com/public/uploads/thumbnail//google-stadia-logo-hd4.png">
+        </div>
+
+        <div class="circle">
+            <div class="content">
+                <img src="https://i.pinimg.com/originals/79/7a/fe/797afe1351677d0ad8787224e6a5be2a.png">
+            </div>
+        </div>
+
+
+        <h1 style="text-transform: uppercase;">Días para el cumpleaños de beita :</h1>
+        <span id="time"></span>
+    </div>
+
+-->
+
+
+<script>
+
+    const daysEl = document.getElementById('dias')
+    const hoursEl = document.getElementById('horas')
+    const minutesEl = document.getElementById('minutos')
+    const secondsEl = document.getElementById('segundos')
+
+
+    function countDown(){
+
+        //Recogemos año actual
+        var year = new Date().getFullYear();
+
+        const birthday = " Sep 25 ";
+
+        //Comparamos si la fecha de cumpleaños es mayor que la fecha actual. Si es así, añadimos un año más.
+        if( (new Date(birthday + year).getTime()) <(new Date().getTime())){
+            year = year + 1
+        }
+
+        console.log('cumple --->' , new Date(birthday + year).getTime())
+        console.log('ahora  --->' ,new Date().getTime())
+        console.log('AÑO   ---->' , year)
+        console.log(' ************************************* ')
+
+//        console.log(birthday + year)
+//        console.log(( birthday + year ) > new Date())
+
+        const birthdayDate = new Date(birthday + year);
+        const currentDate = new Date();
+
+        const totalSeconds = (birthdayDate - currentDate) / 1000
+        const days = Math.floor(totalSeconds / 3600 / 24);
+        const hours = Math.floor(totalSeconds / 3600) % 24;
+        const minutes = Math.floor(totalSeconds / 60) % 60;
+        const seconds = Math.floor(totalSeconds % 60);
+
+        daysEl.innerHTML = days;
+        hoursEl.innerHTML = hours;
+        minutesEl.innerHTML = minutes;
+        secondsEl.innerHTML = seconds;
+        
+        //daysBox.appendChild(document.createTextNode(days))
+    }
+
+    setInterval(countDown, 1000)
+
+    var botones = document.getElementsByClassName('selector');
+
+        botones[0].addEventListener('click', function(){
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1467810563316-b5476525c0f9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80')";
+        });
+
+        botones[1].addEventListener('click', function(){
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1482731910308-31e96e5d1d28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')";
+        });
+
+        botones[2].addEventListener('click', function(){
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1498673394965-85cb14905c89?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')";
+        });
+
+        botones[3].addEventListener('click', function(){
+            document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1529767367174-535729449d71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')";
+        })
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
