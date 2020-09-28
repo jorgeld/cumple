@@ -157,7 +157,7 @@ main{
         position: relative;
         border: solid 1px rgba(255,255,255,0.25);
         border-radius: 3px;
-        padding: 16px;
+        padding: 8px;
         margin: 8px;
         grid-template-rows: auto auto;
     }
@@ -176,13 +176,13 @@ main{
     .content .box .boxTitle{
         font-weight: 400;
         text-align: center;
-        font-size: 32px;
+        font-size: 24px;
         z-index: 1;
     }
     
     .content .box .boxContent{
         font-weight: 100;
-        font-size: 64px;
+        font-size: 56px;
         text-align: center;
         z-index: 1;
     }
